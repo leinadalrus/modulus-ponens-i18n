@@ -28,17 +28,29 @@ fn localize() -> &'static str {
     "/^(localize)?[\w]{8,}$/"
 }
 
-#[launch]
-fn rocket() -> _ {
-    rocket::build()
+// #[launch]
+// fn rocket() -> _ {
+//     rocket::build()
+//         .mount("/", routes![index])
+//         .mount("/", routes![about])
+//         .mount("/", routes![login])
+//         .mount("/", routes![account])
+//         .mount("/", routes![localize]);
+// }
+
+#[rocket::main]
+async fn main() -> Result<(), rocket::Error> {
+    HandleWorkerFtl::register();
+    yew::Renderer::<App>::new().render();
+
+    let _rocket = rocket::build()
         .mount("/", routes![index])
         .mount("/", routes![about])
         .mount("/", routes![login])
         .mount("/", routes![account])
-        .mount("/", routes![localize]);
-}
+        .mount("/", routes![localize])
+        .launch()
+        .await?;
 
-fn main() {
-    HandleWorkerFtl::register();
-    yew::Renderer::<App>::new().render();
+    Ok(())
 }
