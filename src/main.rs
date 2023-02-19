@@ -1,7 +1,9 @@
 #![feature(decl_macro)]
-#[macro_use] extern crate rocket;
+#[macro_use]
+extern crate rocket;
 use bin::websys_worker_handler::HandleWorkerFtl;
-use dwy_vest::{App, bin};
+use dwy_vest::{bin, App};
+use rocket::fs::FileServer;
 use yew_agent::PublicWorker;
 
 #[get("/")]
@@ -50,4 +52,5 @@ fn rocket() -> _ {
         .mount("/", routes![login])
         .mount("/", routes![account])
         .mount("/", routes![localize])
+        .mount("/public", FileServer::from("static/"))
 }

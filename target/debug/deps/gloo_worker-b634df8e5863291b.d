@@ -1,0 +1,11 @@
+F:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\gloo_worker-b634df8e5863291b.rmeta: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\link.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\pool.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\worker\mod.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\worker\private.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\worker\public.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\worker\queue.rs
+
+F:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\gloo_worker-b634df8e5863291b.d: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\link.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\pool.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\worker\mod.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\worker\private.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\worker\public.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\worker\queue.rs
+
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\lib.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\link.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\pool.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\worker\mod.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\worker\private.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\worker\public.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\gloo-worker-0.1.2\src\worker\queue.rs:
