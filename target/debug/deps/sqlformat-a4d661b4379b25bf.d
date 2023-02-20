@@ -1,0 +1,12 @@
+F:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\sqlformat-a4d661b4379b25bf.rmeta: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\formatter.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\indentation.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\inline_block.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\params.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\tokenizer.rs
+
+F:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\libsqlformat-a4d661b4379b25bf.rlib: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\formatter.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\indentation.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\inline_block.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\params.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\tokenizer.rs
+
+F:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\sqlformat-a4d661b4379b25bf.d: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\formatter.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\indentation.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\inline_block.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\params.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\tokenizer.rs
+
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\lib.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\formatter.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\indentation.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\inline_block.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\params.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.2.1\src\tokenizer.rs:

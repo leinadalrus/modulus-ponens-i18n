@@ -1,25 +1,25 @@
-; ModuleID = 'probe6.2125f460-cgu.0'
-source_filename = "probe6.2125f460-cgu.0"
+; ModuleID = 'probe6.79bde385-cgu.0'
+source_filename = "probe6.79bde385-cgu.0"
 target datalayout = "e-m:w-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-windows-msvc"
 
-@alloc3 = private unnamed_addr constant <{ [75 x i8] }> <{ [75 x i8] c"/rustc/2773383a314a4b8f481ce2bed12c32de794ffbe9\\library\\core\\src\\num\\mod.rs" }>, align 1
-@alloc4 = private unnamed_addr constant <{ ptr, [16 x i8] }> <{ ptr @alloc3, [16 x i8] c"K\00\00\00\00\00\00\00\99\03\00\00\05\00\00\00" }>, align 8
+@alloc3 = private unnamed_addr constant <{ [75 x i8] }> <{ [75 x i8] c"/rustc/4507fdaaa27ea2fb59a41df2ce7d1f290da53dae\\library\\core\\src\\num\\mod.rs" }>, align 1
+@alloc4 = private unnamed_addr constant <{ ptr, [16 x i8] }> <{ ptr @alloc3, [16 x i8] c"K\00\00\00\00\00\00\00\8D\03\00\00\05\00\00\00" }>, align 8
 @str.0 = internal constant [25 x i8] c"attempt to divide by zero"
 
 ; probe6::probe
 ; Function Attrs: uwtable
-define void @_ZN6probe65probe17h0c7ed3a7d1c7e79fE() unnamed_addr #0 {
+define void @_ZN6probe65probe17h91fafee3af144efaE() unnamed_addr #0 {
 start:
   %0 = call i1 @llvm.expect.i1(i1 false, i1 false)
-  br i1 %0, label %panic.i, label %"_ZN4core3num21_$LT$impl$u20$u32$GT$10div_euclid17heb01f2d58303cb0eE.exit"
+  br i1 %0, label %panic.i, label %"_ZN4core3num21_$LT$impl$u20$u32$GT$10div_euclid17hc3fed8afa6d1c714E.exit"
 
 panic.i:                                          ; preds = %start
 ; call core::panicking::panic
-  call void @_ZN4core9panicking5panic17h48b2ee4b2214f88bE(ptr align 1 @str.0, i64 25, ptr align 8 @alloc4) #3
+  call void @_ZN4core9panicking5panic17hb1eb04aa65132822E(ptr align 1 @str.0, i64 25, ptr align 8 @alloc4) #3
   unreachable
 
-"_ZN4core3num21_$LT$impl$u20$u32$GT$10div_euclid17heb01f2d58303cb0eE.exit": ; preds = %start
+"_ZN4core3num21_$LT$impl$u20$u32$GT$10div_euclid17hc3fed8afa6d1c714E.exit": ; preds = %start
   ret void
 }
 
@@ -28,7 +28,7 @@ declare i1 @llvm.expect.i1(i1, i1) #1
 
 ; core::panicking::panic
 ; Function Attrs: cold noinline noreturn uwtable
-declare void @_ZN4core9panicking5panic17h48b2ee4b2214f88bE(ptr align 1, i64, ptr align 8) unnamed_addr #2
+declare void @_ZN4core9panicking5panic17hb1eb04aa65132822E(ptr align 1, i64, ptr align 8) unnamed_addr #2
 
 attributes #0 = { uwtable "target-cpu"="x86-64" }
 attributes #1 = { nocallback nofree nosync nounwind readnone willreturn }

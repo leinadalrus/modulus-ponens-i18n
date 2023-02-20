@@ -1,11 +1,11 @@
-; ModuleID = 'probe2.6d53f3bc-cgu.0'
-source_filename = "probe2.6d53f3bc-cgu.0"
+; ModuleID = 'probe2.4fabc455-cgu.0'
+source_filename = "probe2.4fabc455-cgu.0"
 target datalayout = "e-m:w-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-windows-msvc"
 
 ; probe2::probe
 ; Function Attrs: uwtable
-define void @_ZN6probe25probe17h54c4ebe09f73064aE() unnamed_addr #0 {
+define void @_ZN6probe25probe17h2f404525e97e118bE() unnamed_addr #0 {
 start:
   ret void
 }

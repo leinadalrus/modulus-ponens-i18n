@@ -1,0 +1,12 @@
+F:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\cookie-ae29bd882218c218.rmeta: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\builder.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\parse.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\jar.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\delta.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\draft.rs
+
+F:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\libcookie-ae29bd882218c218.rlib: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\builder.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\parse.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\jar.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\delta.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\draft.rs
+
+F:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\cookie-ae29bd882218c218.d: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\builder.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\parse.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\jar.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\delta.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\draft.rs
+
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\lib.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\builder.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\parse.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\jar.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\delta.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\cookie-0.11.5\src\draft.rs:

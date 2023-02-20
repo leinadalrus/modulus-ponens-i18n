@@ -1,20 +1,20 @@
-; ModuleID = 'probe2.6d53f3bc-cgu.0'
-source_filename = "probe2.6d53f3bc-cgu.0"
+; ModuleID = 'probe2.4fabc455-cgu.0'
+source_filename = "probe2.4fabc455-cgu.0"
 target datalayout = "e-m:w-p270:32:32-p271:32:32-p272:64:64-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-windows-msvc"
 
 ; core::f64::<impl f64>::to_int_unchecked
 ; Function Attrs: inlinehint uwtable
-define i32 @"_ZN4core3f6421_$LT$impl$u20$f64$GT$16to_int_unchecked17h9ea37ac6bf4c455fE"(double %self) unnamed_addr #0 {
+define i32 @"_ZN4core3f6421_$LT$impl$u20$f64$GT$16to_int_unchecked17h85e7fd2c5d41747aE"(double %self) unnamed_addr #0 {
 start:
 ; call <f64 as core::convert::num::FloatToInt<i32>>::to_int_unchecked
-  %0 = call i32 @"_ZN65_$LT$f64$u20$as$u20$core..convert..num..FloatToInt$LT$i32$GT$$GT$16to_int_unchecked17h37f241e0bb4be8dbE"(double %self)
+  %0 = call i32 @"_ZN65_$LT$f64$u20$as$u20$core..convert..num..FloatToInt$LT$i32$GT$$GT$16to_int_unchecked17hd2216e20dd6e3152E"(double %self)
   ret i32 %0
 }
 
 ; <f64 as core::convert::num::FloatToInt<i32>>::to_int_unchecked
 ; Function Attrs: inlinehint uwtable
-define internal i32 @"_ZN65_$LT$f64$u20$as$u20$core..convert..num..FloatToInt$LT$i32$GT$$GT$16to_int_unchecked17h37f241e0bb4be8dbE"(double %self) unnamed_addr #0 {
+define internal i32 @"_ZN65_$LT$f64$u20$as$u20$core..convert..num..FloatToInt$LT$i32$GT$$GT$16to_int_unchecked17hd2216e20dd6e3152E"(double %self) unnamed_addr #0 {
 start:
   %0 = alloca i32, align 4
   %1 = fptosi double %self to i32
@@ -25,10 +25,10 @@ start:
 
 ; probe2::probe
 ; Function Attrs: uwtable
-define void @_ZN6probe25probe17h54c4ebe09f73064aE() unnamed_addr #1 {
+define void @_ZN6probe25probe17h2f404525e97e118bE() unnamed_addr #1 {
 start:
 ; call core::f64::<impl f64>::to_int_unchecked
-  %_1 = call i32 @"_ZN4core3f6421_$LT$impl$u20$f64$GT$16to_int_unchecked17h9ea37ac6bf4c455fE"(double 1.000000e+00)
+  %_1 = call i32 @"_ZN4core3f6421_$LT$impl$u20$f64$GT$16to_int_unchecked17h85e7fd2c5d41747aE"(double 1.000000e+00)
   ret void
 }
 

@@ -1,0 +1,12 @@
+F:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\lindera-047bcdd7916a5e95.rmeta: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\analyzer.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\builder.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\error.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\mode.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\tokenizer.rs
+
+F:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\liblindera-047bcdd7916a5e95.rlib: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\analyzer.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\builder.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\error.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\mode.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\tokenizer.rs
+
+F:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\lindera-047bcdd7916a5e95.d: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\analyzer.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\builder.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\error.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\mode.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\tokenizer.rs
+
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\lib.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\analyzer.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\builder.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\error.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\mode.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\lindera-0.22.1\src\tokenizer.rs:
