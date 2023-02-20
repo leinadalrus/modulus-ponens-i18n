@@ -3,11 +3,15 @@
 extern crate rocket;
 use bin::websys_worker_handler::HandleWorkerFtl;
 use dwy_vest::{bin, App};
-use rocket::fs::FileServer;
-use rocket_contrib::json::Json;
+use rocket::{
+    fs::FileServer,
+    serde::{json::Json, Serialize},
+    Build, Rocket,
+};
 use yew_agent::PublicWorker;
 
 #[derive(Serialize)]
+#[serde(crate = "rocket::serde")]
 struct WorkerOutput;
 
 #[get("/")]
@@ -45,8 +49,8 @@ fn localize() -> &'static str {
 //         .mount("/", routes![localize]);
 // }
 
-#[launch]
-fn rocket() -> std::result::Result<JSON<WorkerOutput>, rocket::error::LaunchError> {
+#[rocket::main]
+async fn main() -> Result<(), rocket::Error> {
     HandleWorkerFtl::register();
     yew::Renderer::<App>::new().render();
 
@@ -56,11 +60,9 @@ fn rocket() -> std::result::Result<JSON<WorkerOutput>, rocket::error::LaunchErro
         .mount("/", routes![login])
         .mount("/", routes![account])
         .mount("/", routes![localize])
-        .mount("/public", FileServer::from("static/"));
+        .mount("/public", FileServer::from("static/"))
+        .launch()
+        .await?;
 
-    Json(WorkerOutput)
-}
-
-fn main() {
-    rocket();
+    Ok(())
 }
