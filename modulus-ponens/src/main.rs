@@ -10,11 +10,11 @@ fn main() {
     let selection_comparator = document_selector;
 
     // atomic lookaround regex
-    let class_elem = Regex::new(r"/^(?=(<\W+/>))$/").unwrap();
-    let video_iframe_elem = Regex::new(r"/^(?<(<))\W+\b($iframe)\b|\b($video)\b$/").unwrap();
+    let class_element = Regex::new(r"/^(?=(<\W+/>))$/").unwrap();
+    let video_iframe_element = Regex::new(r"/^(?<(<))\W+\b($iframe)\b|\b($video)\b$/").unwrap();
 
     for node in document_selector
-        .find(Name(video_iframe_elem.as_str().to_owned()))
+        .find(Name(video_iframe_element.as_str().to_owned()))
         .next()
         .unwrap()
         .parent()
@@ -29,7 +29,7 @@ fn main() {
     let fragment = Html::parse_fragment(selection_comparator);
     let children_fragments = fragment.select(selection_comparator).next().unwrap();
     let descendant_body = children_fragments.text().collect::<Vec<&str>>();
-    let regex_matcher = class_elem.find(descendant_body);
+    let regex_matcher = class_element.find(descendant_body);
 
     assert_eq!(
         vec![
@@ -39,7 +39,7 @@ fn main() {
         vec![descendant_body.len()]
     );
     assert_eq!(
-        Some("<{class_elem}/>"),
-        children_fragments.attr(class_elem)
+        Some("<{class_element}/>"),
+        children_fragments.attr(class_element)
     );
 }
