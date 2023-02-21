@@ -607,7 +607,6 @@ dependencies = [
  "lindera",
  "log",
  "regex",
- "reqwest",
  "rocket",
  "serde",
  "sqlx",
@@ -1960,6 +1959,8 @@ dependencies = [
 name = "modulus-ponens"
 version = "0.1.0"
 dependencies = [
+ "regex",
+ "reqwest",
  "scraper",
  "select",
 ]
