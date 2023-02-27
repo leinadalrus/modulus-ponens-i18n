@@ -1,0 +1,8 @@
+F:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\yew_agent-f4139a115f3d2a8e.rmeta: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\yew-agent-0.2.0\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\yew-agent-0.2.0\src\hooks.rs
+
+F:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\libyew_agent-f4139a115f3d2a8e.rlib: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\yew-agent-0.2.0\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\yew-agent-0.2.0\src\hooks.rs
+
+F:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\yew_agent-f4139a115f3d2a8e.d: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\yew-agent-0.2.0\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\yew-agent-0.2.0\src\hooks.rs
+
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\yew-agent-0.2.0\src\lib.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\yew-agent-0.2.0\src\hooks.rs:

@@ -1,2 +1,2 @@
-# Dwy-Vest
- Internationalization/Localization for Translations with Project Fluent. Divest from the Storm.
+# Modulus-Ponens-i18n
+ Your local input - localisations with Project Fluent.

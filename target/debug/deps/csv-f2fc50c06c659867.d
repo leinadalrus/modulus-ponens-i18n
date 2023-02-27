@@ -1,0 +1,15 @@
+f:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\csv-f2fc50c06c659867.rmeta: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\byte_record.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\cookbook.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\debug.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\deserializer.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\error.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\reader.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\serializer.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\string_record.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\tutorial.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\writer.rs
+
+f:\Sources\Repos\dwy-vest\Dwy-Vest\target\debug\deps\csv-f2fc50c06c659867.d: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\byte_record.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\cookbook.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\debug.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\deserializer.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\error.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\reader.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\serializer.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\string_record.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\tutorial.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\writer.rs
+
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\lib.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\byte_record.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\cookbook.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\debug.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\deserializer.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\error.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\reader.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\serializer.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\string_record.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\tutorial.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\csv-1.2.0\src\writer.rs:

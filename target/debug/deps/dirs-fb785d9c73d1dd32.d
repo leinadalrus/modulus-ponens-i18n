@@ -1,0 +1,8 @@
+F:\sources\repos\dwy-vest\Dwy-Vest\target\debug\deps\dirs-fb785d9c73d1dd32.rmeta: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\dirs-4.0.0\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\dirs-4.0.0\src\win.rs
+
+F:\sources\repos\dwy-vest\Dwy-Vest\target\debug\deps\libdirs-fb785d9c73d1dd32.rlib: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\dirs-4.0.0\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\dirs-4.0.0\src\win.rs
+
+F:\sources\repos\dwy-vest\Dwy-Vest\target\debug\deps\dirs-fb785d9c73d1dd32.d: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\dirs-4.0.0\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\dirs-4.0.0\src\win.rs
+
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\dirs-4.0.0\src\lib.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\dirs-4.0.0\src\win.rs:
