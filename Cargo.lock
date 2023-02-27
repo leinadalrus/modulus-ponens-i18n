@@ -607,38 +607,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "dwy-vest"
-version = "0.1.0"
-dependencies = [
- "bytes",
- "clap",
- "encoding_rs",
- "fluent",
- "fluent-bundle",
- "fluent-fallback",
- "fluent-resmgr",
- "fluent-syntax",
- "futures",
- "js-sys",
- "lindera",
- "log",
- "regex",
- "rocket",
- "serde",
- "sqlx",
- "tokio",
- "unic-langid",
- "uuid",
- "warp",
- "wasm-bindgen",
- "wasm-bindgen-futures",
- "wasm-logger",
- "web-sys",
- "yew",
- "yew-agent",
-]
-
-[[package]]
 name = "ego-tree"
 version = "0.6.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1672,9 +1640,9 @@ checksum = "201de327520df007757c1f0adce6e827fe8562fbc28bfd9c15571c66ca1f5f79"
 
 [[package]]
 name = "lindera"
-version = "0.22.1"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9d3e838c986b1ba7652194b537b1d6c57f6a3f965217c5c861688b46f0307ea5"
+checksum = "be82e99729d90bea5561da15c346fefa4e838ae2a4f71c539c9caf8a6dfd8c5c"
 dependencies = [
  "anyhow",
  "bincode",
@@ -1699,9 +1667,9 @@ dependencies = [
 
 [[package]]
 name = "lindera-cc-cedict-builder"
-version = "0.22.1"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4331baac40b680d37eb9bcc9690d28faee59f5b51233220e275abb474b8cdd0d"
+checksum = "10fbafd37adab44ccc2668a40fba2dbc4e665cb3c36018c15dfe2e2b830e28ce"
 dependencies = [
  "anyhow",
  "bincode",
@@ -1718,9 +1686,9 @@ dependencies = [
 
 [[package]]
 name = "lindera-core"
-version = "0.22.1"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d5709ba86702b00542015cf51860c6b2e4b7148a4e7bcf5619efb3a84131c8d1"
+checksum = "e5f0baa9932f682e9c5b388897330f155d3c40de80016e60125897fde5e0e246"
 dependencies = [
  "anyhow",
  "bincode",
@@ -1735,9 +1703,9 @@ dependencies = [
 
 [[package]]
 name = "lindera-decompress"
-version = "0.22.1"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e80258fc26d3fc4ad03711d96eca34932a1c8aee78f6f38a86d7b6932c61d3b4"
+checksum = "a6e63fa6ef0bc3ce2c26d372aa6185b7a316194494a84f81678f5da2893bf4a2"
 dependencies = [
  "anyhow",
  "flate2",
@@ -1746,9 +1714,9 @@ dependencies = [
 
 [[package]]
 name = "lindera-dictionary"
-version = "0.22.1"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d09fc939cb6136b0f2d72d20deec66e2c7784780f76c5704e110207803cd6097"
+checksum = "fd765c36166016de87a1f447ea971573e4c63e334836c46ad0020f0408c88bfc"
 dependencies = [
  "anyhow",
  "bincode",
@@ -1759,9 +1727,9 @@ dependencies = [
 
 [[package]]
 name = "lindera-filter"
-version = "0.22.1"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "13402e0cc63a9372605b4d887eb7bf416ea1a9777c6f9a5347cbbdaf2bc08c5b"
+checksum = "55201d662db55b8092183151c9734a43557a0b20f6adffc8320481a8727371da"
 dependencies = [
  "anyhow",
  "bincode",
@@ -1780,9 +1748,9 @@ dependencies = [
 
 [[package]]
 name = "lindera-ipadic-builder"
-version = "0.22.1"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b7aaf3f04bb74de8aadcc02f1ea7a5b221762be9a16ecee97fd667e6bce214b7"
+checksum = "0a16a2a88db9d956f5086bc976deb9951ca2dbbfef41a002df0a7bfb2c845aab"
 dependencies = [
  "anyhow",
  "bincode",
@@ -1801,9 +1769,9 @@ dependencies = [
 
 [[package]]
 name = "lindera-ko-dic-builder"
-version = "0.22.1"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "adf8a34b763058356d2c1b66d5cbf49b6867ed00887338488df78ff4e4040a33"
+checksum = "9b9b58213552560717c48e7833444a20d2d7fe26a6e565f7ce0cbbf85784c7cf"
 dependencies = [
  "anyhow",
  "bincode",
@@ -1820,9 +1788,9 @@ dependencies = [
 
 [[package]]
 name = "lindera-unidic-builder"
-version = "0.22.1"
+version = "0.23.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "07cc3184265e6c9564cedc89b5d0a4bec2f3e606eb425840659d5e7d658f3ec2"
+checksum = "6858147cdaf4a7b564c08a247449d3aca38e9b4812499651af08afbf85324596"
 dependencies = [
  "anyhow",
  "bincode",
@@ -1990,6 +1958,38 @@ dependencies = [
  "reqwest",
  "scraper",
  "select",
+]
+
+[[package]]
+name = "modulus-ponens-i18n"
+version = "0.1.0"
+dependencies = [
+ "bytes",
+ "clap",
+ "encoding_rs",
+ "fluent",
+ "fluent-bundle",
+ "fluent-fallback",
+ "fluent-resmgr",
+ "fluent-syntax",
+ "futures",
+ "js-sys",
+ "lindera",
+ "log",
+ "regex",
+ "rocket",
+ "serde",
+ "sqlx",
+ "tokio",
+ "unic-langid",
+ "uuid",
+ "warp",
+ "wasm-bindgen",
+ "wasm-bindgen-futures",
+ "wasm-logger",
+ "web-sys",
+ "yew",
+ "yew-agent",
 ]
 
 [[package]]

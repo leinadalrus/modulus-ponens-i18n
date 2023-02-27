@@ -1,5 +1,5 @@
 [package]
-name = "dwy-vest"
+name = "modulus-ponens-i18n"
 version = "0.1.0"
 edition = "2021"
 authors = ["leinadalrus <daniel.david.surla@gmail.com>"]
@@ -22,7 +22,7 @@ name = "mod"
 path = "src/bin/mod.rs"
 
 [[bin]]
-name = "dwy-vest"
+name = "modulus-ponens-i18n"
 path = "src/main.rs"
 
 [dependencies]
@@ -35,7 +35,7 @@ fluent-resmgr = "0.0.6"
 fluent-syntax = "0.11.0"
 futures = { version = "0.3", features = ["std"], default-features = false }
 js-sys = "0.3"
-lindera = "0.22.0"
+lindera = "0.23.0"
 log = "0.4"
 regex = "1.7.1"
 rocket = { version = "0.5.0-rc.2", features = ["json"] }
