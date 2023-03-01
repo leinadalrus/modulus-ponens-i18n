@@ -4,14 +4,35 @@ use select::{
     document::Document,
     predicate::{Attr, Name},
 };
+use serde::{Deserialize, Serialize};
+use wasm_bindgen::prelude::*;
 
-pub fn request_throttled(url: &str) -> std::result::Result<String, Box<dyn std::error::Error>> {
+pub fn slow_interf_reqs(url: &str) -> std::result::Result<String, Box<dyn std::error::Error>> {
+    url = match std::env::args().nth(1) {
+        Some(url) => &url,
+        None => {
+            println!("No CLI URL provided, using default.");
+            "https://allanime.to/watch/YeWtc8REZAGKPeb6q/kage-no-jitsuryokusha-ni-naritakute-/episode-1-sub".into()
+        }
+    };
     let response = reqwest::blocking::get(url).expect("URL undefined | unknown");
     response.text().unwrap()
 }
 
-fn main() {
-    let url_to_be_examined = "https://allanime.to/watch/YeWtc8REZAGKPeb6q/kage-no-jitsuryokusha-ni-naritakute-/episode-1-sub";
+pub fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
+    // Some simple CLI args requirements...
+    let url_to_be_examined = match std::env::args().nth(1) {
+        Some(url) => url,
+        None => {
+            println!("No CLI URL provided, using default.");
+            "https://allanime.to/watch/YeWtc8REZAGKPeb6q/kage-no-jitsuryokusha-ni-naritakute-/episode-1-sub".into()
+        }
+    };
+
+    let body = reqwest::get(url_to_be_examined)
+    .text()
+    .await?;
+
     let built_cookie_client = reqwest::blocking::Client::builder().cookie_store(true).build()?;
     client.get(url_to_be_examined).send()?;
 
@@ -52,4 +73,6 @@ fn main() {
             vec![descendant_body.len()]
         ); // NOTE(David): non-throttled `loop {}` condition would be nice for testing
     }
+
+    Ok(())
 }

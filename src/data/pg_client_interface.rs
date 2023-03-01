@@ -8,6 +8,17 @@ struct User {
     username: String,
 }
 
+#[derive(sqlx::FromRow)]
+struct Caption;
+
+#[derive(sqlx::FromRow)]
+struct Video {
+    id: i64,
+    user: User,
+    title: String,
+    captions: Caption,
+}
+
 async fn pg_pool_init() -> Result<(), sqlx::Error> {
     let postgres_password = "Crudux:Cruo_i18n";
     let pool = PgPoolOptions::new()
@@ -22,9 +33,16 @@ async fn pg_pool_init() -> Result<(), sqlx::Error> {
         .fetch_one(&pool)
         .await?;
 
+    let mut videos = sqlx::query_as::<_, Video>("SELECT * FROM videos WHERE id = ? or id = 0")
+        .bind(username)
+        .bind(title)
+        .fetch_one(&pool)
+        .await?;
+
     while let Some(rows) = rows.try_next().await? {
         let email: &str = rows.try_get("email")?;
         let username: &str = rows.try_get("username")?;
+        let title: &str = videos.try_get("title")?;
     }
 
     Ok(())
