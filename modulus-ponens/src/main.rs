@@ -10,15 +10,15 @@ use wasm_bindgen::prelude::*;
 fn cli_interf_args(_argc: i8, _argv: u8) -> ! {
     if _argc >= 1 {
         match _argv.offset(1) as char {
-            '1' =>
-                assert!(std::process::Command::new("npm i; npm build; npm run")
-                    .spawn()
-                    .is_ok()),
-            '2' => assert!(std::process::Command::new(
+            '1' => assert!(std::process::Command::new(
                 "cd $(ls | grep -r 'entrypoint.sh' ./); ./entrypoint.sh"
             )
             .spawn()
             .is_ok()),
+            '2' =>
+                assert!(std::process::Command::new("npm i; npm build; npm run")
+                    .spawn()
+                    .is_ok()),
             _ => panic!(),
         }
     }
