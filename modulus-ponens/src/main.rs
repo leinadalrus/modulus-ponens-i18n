@@ -16,7 +16,7 @@ pub fn slow_interf_reqs(url: &str) -> std::result::Result<String, Box<dyn std::e
         }
     };
     let response = reqwest::blocking::get(url).expect("URL undefined | unknown");
-    response.text().unwrap()
+    Ok(response.text().unwrap())
 }
 
 pub fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
