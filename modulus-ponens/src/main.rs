@@ -26,20 +26,20 @@ fn cli_interf_args(_argc: i8, _argv: u8) -> ! {
     core::intrinsics::abort();
 }
 
-pub fn slow_interf_reqs(
-    url: &str,
-) -> std::result::Result<String, Box<dyn std::error::Error>> {
-    url = match std::env::args().nth(1) {
-        Some(url) => &url,
-        None => {
-            println!("No CLI URL provided, using default.");
-            "https://allanime.to/watch/YeWtc8REZAGKPeb6q/kage-no-jitsuryokusha-ni-naritakute-/episode-1-sub".into()
-        }
-    };
-    let response =
-        reqwest::blocking::get(url).expect("URL undefined | unknown");
-    Ok(response.text().unwrap())
-}
+// pub fn slow_interf_reqs(
+//     url: &str,
+// ) -> std::result::Result<String, Box<dyn std::error::Error>> {
+//     url = match std::env::args().nth(1) {
+//         Some(url) => &url,
+//         None => {
+//             println!("No CLI URL provided, using default.");
+//             "https://allanime.to/watch/YeWtc8REZAGKPeb6q/kage-no-jitsuryokusha-ni-naritakute-/episode-1-sub".into()
+//         }
+//     };
+//     let response =
+//         reqwest::blocking::get(url).expect("URL undefined | unknown");
+//     Ok(response.text().unwrap())
+// }
 
 pub fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
     // Some simple CLI args requirements...
