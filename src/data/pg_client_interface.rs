@@ -24,7 +24,7 @@ async fn pg_pool_init() -> Result<(), sqlx::Error> {
     let pool = PgPoolOptions::new()
         .max_connections(1)
         .connect("postgres://postgres:" + postgres_password + "@localhost/captions")
-        .await?;
+        .await?; // TODO(Config): save this connection data into a safe JSON/Configfile.
 
     // Make a simple query to return the given parameter (use a question mark `?` instead of `$1` for MySQL)
     let mut rows = sqlx::query_as::<_, User>("SELECT * FROM users WHERE email = ? OR username = ?")
@@ -45,5 +45,17 @@ async fn pg_pool_init() -> Result<(), sqlx::Error> {
         let title: &str = videos.try_get("title")?;
     }
 
+    Ok(())
+}
+
+async fn pg_pool_insert() -> Result<(), sqlx::Error> {
+    Ok(())
+}
+
+async fn pg_pool_update() -> Result<(), sqlx::Error> {
+    Ok(())
+}
+
+async fn pg_pool_destroy() -> Result<(), sqlx::Error> {
     Ok(())
 }
