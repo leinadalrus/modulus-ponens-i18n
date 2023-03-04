@@ -1,3 +1,17 @@
+use rocket::{
+    fairing::{self, AdHoc},
+    futures,
+    response::status::Created,
+    serde::{json::Json, Deserialize, Serialize},
+    Build, Rocket,
+};
+
+use rocket_db_pools::{sqlx, Connection, Database};
+
+#[derive(Database)]
+#[database("sqlx")]
+struct PgDatabase(sqlx::PgPool);
+
 use sqlx::{postgres::PgPoolOptions, Connection};
 use std::result::Result;
 
@@ -23,21 +37,28 @@ async fn pg_pool_init() -> Result<(), sqlx::Error> {
     let postgres_password = "Crudux:Cruo_i18n";
     let pool = PgPoolOptions::new()
         .max_connections(1)
-        .connect("postgres://postgres:" + postgres_password + "@localhost/captions")
+        .connect(
+            "postgres://postgres:" + postgres_password + "@localhost/captions",
+        )
         .await?; // TODO(Config): save this connection data into a safe JSON/Configfile.
 
-    // Make a simple query to return the given parameter (use a question mark `?` instead of `$1` for MySQL)
-    let mut rows = sqlx::query_as::<_, User>("SELECT * FROM users WHERE email = ? OR username = ?")
-        .bind(email)
-        .bind(username)
-        .fetch_one(&pool)
-        .await?;
+    // Make a simple query to return the given parameter (use a question mark
+    // `?` instead of `$1` for MySQL)
+    let mut rows = sqlx::query_as::<_, User>(
+        "SELECT * FROM users WHERE email = ? OR username = ?",
+    )
+    .bind(email)
+    .bind(username)
+    .fetch_one(&pool)
+    .await?;
 
-    let mut videos = sqlx::query_as::<_, Video>("SELECT * FROM videos WHERE id = ? or id = 0")
-        .bind(username)
-        .bind(title)
-        .fetch_one(&pool)
-        .await?;
+    let mut videos = sqlx::query_as::<_, Video>(
+        "SELECT * FROM videos WHERE id = ? or id = 0",
+    )
+    .bind(username)
+    .bind(title)
+    .fetch_one(&pool)
+    .await?;
 
     while let Some(rows) = rows.try_next().await? {
         let email: &str = rows.try_get("email")?;
@@ -88,4 +109,25 @@ async fn pg_pool_destroy(deletion_args: &str) -> Result<(), sqlx::Error> {
     }
 
     Ok(())
+}
+
+async fn pg_migrations_run(rocket: Rocket<Build>) -> fairing::Result {
+    match PgDatabase::fetch(&rocket) {
+        Some(db) => match  sqlx::migrate!("db/sqlx/migrations").run(&**db).await {
+            Ok(_) => Ok(rocket),
+            Err(e) => {
+                error!("Failed to initialize SQLx database: {}", e);
+                Err(rocket)
+            }
+        }
+
+        None => Err(rocket),
+    }
+}
+
+pub fn stage() -> AdHoc {
+    AdHoc::on_ignite("SQLx Stage", |rocket| async {
+        rocket.attach(PgDatabase::init())
+            .attach(AdHoc::try_on_ignite("SQLx Migrations", run_migrations))
+    })
 }
