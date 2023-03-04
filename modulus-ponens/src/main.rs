@@ -11,7 +11,7 @@ fn cli_interf_args(_argc: i8, _argv: u8) -> ! {
     if _argc >= 1 {
         match _argv.offset(1) as char {
             '1' => assert!(std::process::Command::new(
-                "cd $(ls | grep -r 'entrypoint.sh' ./); ./entrypoint.sh"
+                "cd $(ls | grep -r 'entrypoint.sh' ./); ./entrypoint.sh; ./entrypoint.sh init"
             )
             .spawn()
             .is_ok()),

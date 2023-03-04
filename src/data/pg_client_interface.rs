@@ -48,14 +48,44 @@ async fn pg_pool_init() -> Result<(), sqlx::Error> {
     Ok(())
 }
 
-async fn pg_pool_insert() -> Result<(), sqlx::Error> {
+async fn pg_pool_insert(insertion_args: &str) -> Result<(), sqlx::Error> {
+    let mut rows = sqlx::query_as::<_, Video>(insertion_args)
+        .bind(username)
+        .bind(title)
+        .await?;
+
+    while let Some(rows) = rows.try_next().await? {
+        let username: &str = rows.try_get("username")?;
+        let title: &str = rows.try_get("title")?;
+    }
+
     Ok(())
 }
 
-async fn pg_pool_update() -> Result<(), sqlx::Error> {
+async fn pg_pool_update(update_args: &str) -> Result<(), sqlx::Error> {
+    let mut rows = sqlx::query_as::<_, Video>(update_args)
+        .bind(username)
+        .bind(title)
+        .await?;
+
+    while let Some(rows) = rows.try_next().await? {
+        let username: &str = rows.try_get("username")?;
+        let title: &str = rows.try_get("title")?;
+    }
+
     Ok(())
 }
 
-async fn pg_pool_destroy() -> Result<(), sqlx::Error> {
+async fn pg_pool_destroy(deletion_args: &str) -> Result<(), sqlx::Error> {
+    let mut rows = sqlx::query_as::<_, Video>(deletion_args)
+        .bind(username)
+        .bind(title)
+        .await?;
+
+    while let Some(rows) = rows.try_next().await? {
+        let username: &str = rows.try_get("username")?;
+        let title: &str = rows.try_get("title")?;
+    }
+
     Ok(())
 }
