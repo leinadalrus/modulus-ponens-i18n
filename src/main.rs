@@ -1,7 +1,7 @@
 #![feature(decl_macro)]
 #[macro_use] extern crate rocket;
 use bin::websys_worker_handler::HandleWorkerFtl;
-use dwy_vest::{bin, App};
+use modulus_ponens_i18n::{App, bin};
 use rocket::{
     fs::FileServer,
     serde::{json::Json, Serialize},
@@ -44,7 +44,7 @@ async fn main() -> Result<(), rocket::Error> {
     yew::Renderer::<App>::new().render();
 
     rocket::build()
-        .attach(sqlx::stage())
+        .attach(stage())
         .mount("/", routes![index])
         .mount("/", routes![about])
         .mount("/", routes![login])

@@ -1,3 +1,5 @@
+#![feature(decl_macro)]
+#[macro_use] extern crate rocket;
 use rocket::{
     fairing::{self, AdHoc},
     futures,
@@ -5,15 +7,14 @@ use rocket::{
     serde::{json::Json, Deserialize, Serialize},
     Build, Rocket,
 };
-
 use rocket_db_pools::{sqlx, Connection, Database};
+extern crate sqlx as x;
+use std::result::Result;
+use x::postgres::PgPoolOptions;
 
 #[derive(Database)]
 #[database("sqlx")]
 struct PgDatabase(sqlx::PgPool);
-
-use sqlx::{postgres::PgPoolOptions, Connection};
-use std::result::Result;
 
 #[derive(sqlx::FromRow)]
 struct User {
@@ -33,93 +34,82 @@ struct Video {
     captions: Caption,
 }
 
-async fn pg_pool_init() -> Result<(), sqlx::Error> {
+async fn pg_pool_init() -> Result<(), x::Error> {
     let postgres_password = "Crudux:Cruo_i18n";
-    let pool = PgPoolOptions::new()
-        .max_connections(1)
-        .connect(
-            "postgres://postgres:" + postgres_password + "@localhost/captions",
-        )
-        .await?; // TODO(Config): save this connection data into a safe JSON/Configfile.
+    let pool = PgPoolOptions::new().max_connections(1).connect(
+        &"postgres://postgres:ehm4rn3nd_wy@localhost/captions".to_owned(),
+    ); // TODO(Config): save this connection data into a safe JSON/Configfile.
 
     // Make a simple query to return the given parameter (use a question mark
     // `?` instead of `$1` for MySQL)
-    let mut rows = sqlx::query_as::<_, User>(
+    let mut rows = x::query_as::<_, User>(
         "SELECT * FROM users WHERE email = ? OR username = ?",
     )
     .bind(email)
-    .bind(username)
-    .fetch_one(&pool)
-    .await?;
+    .bind(username);
 
-    let mut videos = sqlx::query_as::<_, Video>(
+    let mut videos = x::query_as::<_, Video>(
         "SELECT * FROM videos WHERE id = ? or id = 0",
     )
     .bind(username)
-    .bind(title)
-    .fetch_one(&pool)
-    .await?;
+    .bind(title);
 
-    while let Some(rows) = rows.try_next().await? {
-        let email: &str = rows.try_get("email")?;
-        let username: &str = rows.try_get("username")?;
-        let title: &str = videos.try_get("title")?;
+    while let Ok(Some(rows)) = rows.try_into() {
+        let email: &str = "email";
+        let username: &str = "username";
     }
 
     Ok(())
 }
 
-async fn pg_pool_insert(insertion_args: &str) -> Result<(), sqlx::Error> {
-    let mut rows = sqlx::query_as::<_, Video>(insertion_args)
-        .bind(username)
-        .bind(title)
-        .await?;
+async fn pg_pool_insert(insertion_args: &str) -> Result<(), x::Error> {
+    let mut rows = x::query_as::<_, Video>(insertion_args)
+        .bind(user)
+        .bind(title);
 
-    while let Some(rows) = rows.try_next().await? {
-        let username: &str = rows.try_get("username")?;
-        let title: &str = rows.try_get("title")?;
+    while let Ok(Some(rows)) = rows.try_into() {
+        let user: &str = "user";
+        let title: &str = "title";
     }
 
     Ok(())
 }
 
-async fn pg_pool_update(update_args: &str) -> Result<(), sqlx::Error> {
-    let mut rows = sqlx::query_as::<_, Video>(update_args)
-        .bind(username)
-        .bind(title)
-        .await?;
+async fn pg_pool_update(update_args: &str) -> Result<(), x::Error> {
+    let mut rows = x::query_as::<_, Video>(update_args)
+        .bind(user)
+        .bind(title);
 
-    while let Some(rows) = rows.try_next().await? {
-        let username: &str = rows.try_get("username")?;
-        let title: &str = rows.try_get("title")?;
+    while let Ok(Some(rows)) = rows.try_into() {
+        let user: &str = "user";
+        let title: &str = "title";
     }
 
     Ok(())
 }
 
-async fn pg_pool_destroy(deletion_args: &str) -> Result<(), sqlx::Error> {
-    let mut rows = sqlx::query_as::<_, Video>(deletion_args)
-        .bind(username)
-        .bind(title)
-        .await?;
+async fn pg_pool_destroy(deletion_args: &str) -> Result<(), x::Error> {
+    let mut rows = x::query_as::<_, Video>(deletion_args)
+        .bind(user)
+        .bind(title);
 
-    while let Some(rows) = rows.try_next().await? {
-        let username: &str = rows.try_get("username")?;
-        let title: &str = rows.try_get("title")?;
+    while let Ok(Some(rows)) = rows.try_into() {
+        let user: &str = "user";
+        let title: &str = "title";
     }
 
     Ok(())
 }
 
 async fn pg_migrations_run(rocket: Rocket<Build>) -> fairing::Result {
-    match PgDatabase::fetch(&rocket) {
-        Some(db) => match  sqlx::migrate!("db/sqlx/migrations").run(&**db).await {
+    match Database::fetch(&rocket) {
+        Some(db) => match x::migrate!("db/sqlx/migrations") {
             Ok(_) => Ok(rocket),
             Err(e) => {
                 error!("Failed to initialize SQLx database: {}", e);
                 Err(rocket)
             }
-        }
+        },
 
         None => Err(rocket),
     }
@@ -127,7 +117,8 @@ async fn pg_migrations_run(rocket: Rocket<Build>) -> fairing::Result {
 
 pub fn stage() -> AdHoc {
     AdHoc::on_ignite("SQLx Stage", |rocket| async {
-        rocket.attach(PgDatabase::init())
-            .attach(AdHoc::try_on_ignite("SQLx Migrations", run_migrations))
+        rocket
+            .attach(Database::init())
+            .attach(AdHoc::try_on_ignite("SQLx Migrations", pg_migrations_run))
     })
 }

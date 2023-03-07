@@ -1,25 +1,33 @@
+#![feature(core_intrinsics)]
+#![feature(dec2flt)]
+use core::num::dec2flt::parse;
 use regex::Regex;
+use reqwest;
 use scraper::{Html, Selector};
 use select::{
     document::Document,
     predicate::{Attr, Name},
-};
+}; // use separately from Scraper-Rs
 use serde::{Deserialize, Serialize};
 use wasm_bindgen::prelude::*;
 
-fn cli_interf_args(_argc: i8, _argv: u8) -> ! {
+fn cli_interf_args(_argc: isize, _argv: *const *const u32) -> ! {
     if _argc >= 1 {
-        match _argv.offset(1) as char {
-            '1' => assert!(std::process::Command::new(
-                "cd $(ls | grep -r 'entrypoint.sh' ./); ./entrypoint.sh; ./entrypoint.sh init"
-            )
-            .spawn()
-            .is_ok()),
-            '2' =>
-                assert!(std::process::Command::new("npm i; npm build; npm run")
-                    .spawn()
-                    .is_ok()),
-            _ => panic!(),
+        unsafe {
+            match char::from_u32(**_argv) {
+                Some('1') => assert!(std::process::Command::new(
+                    "cd $(ls | grep -r 'entrypoint.sh' ./); ./entrypoint.sh; \
+                     ./entrypoint.sh init"
+                )
+                .spawn()
+                .is_ok()),
+                Some('2') => assert!(std::process::Command::new(
+                    "npm i; npm build; npm run"
+                )
+                .spawn()
+                .is_ok()),
+                _ => panic!(),
+            }
         }
     }
 
@@ -51,46 +59,39 @@ pub fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
         }
     };
 
-    let body = reqwest::get(url_to_be_examined).text().await?;
-
+    let content_body = reqwest::get(url_to_be_examined);
     let built_cookie_client = reqwest::blocking::Client::builder()
         .cookie_store(true)
         .build()?;
-    client.get(url_to_be_examined).send()?;
-
-    let html_raw_document = request_throttled(url_to_be_examined);
-    let document_selector = Document::from(&html_raw_document);
+    built_cookie_client.get(url_to_be_examined).send()?;
 
     // atomic lookaround regex
     let class_template_element = Regex::new(r"/^(?=(<\W+/>))$/").unwrap();
     let video_iframe_element =
         Regex::new(r"/^(?<(<)\b($iframe)\b$/+?>(>))").unwrap();
 
-    for iframe_tag_element in document_selector.find(
-        Name(video_iframe_element.as_str().to_owned())
-            .descendant(Attr("id", "arc")),
-    )
-    // change to "src" and value
-    {
-        let iframe_tag_refstr_convert = &iframe_tag_element.to_str();
-        let tag_refstr_selection_comparator =
-            &Selector::parse(iframe_tag_refstr_convert)
-                .expect("Element error | undefined | unknown");
-        let element_tag_iframe = iframe_tag_element
-            .select(tag_refstr_selection_comparator)
-            .flat_map(|element| element.text())
-            .collect();
+    let parsed_fragment =
+        Html::parse_fragment(&video_iframe_element.to_string());
+    let iframe_selector = Selector::parse("iframe").unwrap();
+    let arc_selector = Selector::parse("arc").unwrap();
+    let arc_id = parsed_fragment.select(&iframe_selector).next().unwrap();
 
-        // have the fragment be the selector's selected HTML nodes
-        let fragment = Html::parse_fragment(element_tag_iframe);
-        let children_fragments = fragment
-            .find(Attr("allowfullscreen", "allowfullscreen")) // find the lang-setup exported function
-            .next()
-            .unwrap() // unwrap to get the raw-string values
-            .find(Attr("referrerpolicy", "origin"))
-            .next()
-            .unwrap();
-        let descendant_body = children_fragments.text().collect::<Vec<&str>>();
+    // change to "src" and value
+    let iframe_tag_refstr_convert = &iframe_selector;
+    let tag_refstr_selection_comparator =
+        &Selector::parse(iframe_tag_refstr_convert)
+            .expect("Element error | undefined | unknown");
+    let elements = iframe_selector.ne(&tag_refstr_selection_comparator);
+
+    for element in elements {
+        if element == elements {
+            return Err(element);
+        }
+    }
+
+    for attribute in arc_id.select(&arc_selector) {
+        let arc_attributes = attribute.value().attrs;
+        let descendant_body = arc_attributes.values().next();
         let regex_matcher = video_iframe_element.find(descendant_body);
 
         assert_eq!(
@@ -98,7 +99,7 @@ pub fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
                 regex_matcher.expect("\r\n").start(),
                 regex_matcher.expect("\0").end()
             ],
-            vec![descendant_body.len()]
+            vec![descendant_body]
         ); // NOTE(David): non-throttled `loop {}` condition would be nice for
            // testing
     }

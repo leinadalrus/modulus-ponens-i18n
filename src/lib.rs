@@ -1,4 +1,5 @@
 pub mod bin;
+pub mod data;
 
 use std::rc::Rc;
 

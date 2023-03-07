@@ -1,7 +1,7 @@
 #![feature(decl_macro)]
 #[macro_use]
 extern crate rocket;
-use dwy_vest::{bin, App};
+use modulus_ponens_i18n::{bin, App};
 use rocket::{
     data::{Data, ToByteUnit},
     fs::NamedFile,
