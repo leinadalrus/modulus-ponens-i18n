@@ -37,7 +37,7 @@ struct Video {
 async fn pg_pool_init() -> Result<(), external_sqlx::Error> {
     let postgres_password = "Crudux:Cruo_i18n";
     let pool = PgPoolOptions::new().max_connections(1).connect(
-        &"postgres://postgres:ehm4rn3nd_wy@localhost/captions".to_owned(),
+        &"postgres://postgres:ehm4rn3ndx_wky3xep@localhost/captions".to_owned(), // Fake password
     ); // TODO(Config): save this connection data into a safe JSON/Configfile.
 
     // Make a simple query to return the given parameter (use a question mark
