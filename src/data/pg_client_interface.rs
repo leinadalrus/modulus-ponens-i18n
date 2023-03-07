@@ -8,9 +8,9 @@ use rocket::{
     Build, Rocket,
 };
 use rocket_db_pools::{sqlx, Connection, Database};
-extern crate sqlx as x;
+extern crate sqlx as external_sqlx;
 use std::result::Result;
-use x::postgres::PgPoolOptions;
+use external_sqlx::postgres::PgPoolOptions;
 
 #[derive(Database)]
 #[database("sqlx")]
@@ -34,7 +34,7 @@ struct Video {
     captions: Caption,
 }
 
-async fn pg_pool_init() -> Result<(), x::Error> {
+async fn pg_pool_init() -> Result<(), external_sqlx::Error> {
     let postgres_password = "Crudux:Cruo_i18n";
     let pool = PgPoolOptions::new().max_connections(1).connect(
         &"postgres://postgres:ehm4rn3nd_wy@localhost/captions".to_owned(),
@@ -42,13 +42,13 @@ async fn pg_pool_init() -> Result<(), x::Error> {
 
     // Make a simple query to return the given parameter (use a question mark
     // `?` instead of `$1` for MySQL)
-    let mut rows = x::query_as::<_, User>(
+    let mut rows = external_sqlx::query_as::<_, User>(
         "SELECT * FROM users WHERE email = ? OR username = ?",
     )
     .bind(email)
     .bind(username);
 
-    let mut videos = x::query_as::<_, Video>(
+    let mut videos = external_sqlx::query_as::<_, Video>(
         "SELECT * FROM videos WHERE id = ? or id = 0",
     )
     .bind(username)
@@ -62,8 +62,8 @@ async fn pg_pool_init() -> Result<(), x::Error> {
     Ok(())
 }
 
-async fn pg_pool_insert(insertion_args: &str) -> Result<(), x::Error> {
-    let mut rows = x::query_as::<_, Video>(insertion_args)
+async fn pg_pool_insert(insertion_args: &str) -> Result<(), external_sqlx::Error> {
+    let mut rows = external_sqlx::query_as::<_, Video>(insertion_args)
         .bind(user)
         .bind(title);
 
@@ -75,8 +75,8 @@ async fn pg_pool_insert(insertion_args: &str) -> Result<(), x::Error> {
     Ok(())
 }
 
-async fn pg_pool_update(update_args: &str) -> Result<(), x::Error> {
-    let mut rows = x::query_as::<_, Video>(update_args)
+async fn pg_pool_update(update_args: &str) -> Result<(), external_sqlx::Error> {
+    let mut rows = external_sqlx::query_as::<_, Video>(update_args)
         .bind(user)
         .bind(title);
 
@@ -88,8 +88,8 @@ async fn pg_pool_update(update_args: &str) -> Result<(), x::Error> {
     Ok(())
 }
 
-async fn pg_pool_destroy(deletion_args: &str) -> Result<(), x::Error> {
-    let mut rows = x::query_as::<_, Video>(deletion_args)
+async fn pg_pool_destroy(deletion_args: &str) -> Result<(), external_sqlx::Error> {
+    let mut rows = external_sqlx::query_as::<_, Video>(deletion_args)
         .bind(user)
         .bind(title);
 
@@ -103,7 +103,7 @@ async fn pg_pool_destroy(deletion_args: &str) -> Result<(), x::Error> {
 
 async fn pg_migrations_run(rocket: Rocket<Build>) -> fairing::Result {
     match Database::fetch(&rocket) {
-        Some(db) => match x::migrate!("db/sqlx/migrations") {
+        Some(db) => match external_sqlx::migrate!("db/sqlx/migrations") {
             Ok(_) => Ok(rocket),
             Err(e) => {
                 error!("Failed to initialize SQLx database: {}", e);
