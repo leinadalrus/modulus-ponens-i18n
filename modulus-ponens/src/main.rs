@@ -1,8 +1,9 @@
 #![feature(core_intrinsics)]
 #![feature(dec2flt)]
 use core::num::dec2flt::parse;
+use std::vec;
 use regex::Regex;
-use reqwest;
+use reqwest::Client;
 use scraper::{Html, Selector};
 use select::{
     document::Document,
@@ -60,10 +61,7 @@ pub fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
     };
 
     let content_body = reqwest::get(url_to_be_examined);
-    let built_cookie_client = reqwest::blocking::Client::builder()
-        .cookie_store(true)
-        .build()?;
-    built_cookie_client.get(url_to_be_examined).send()?;
+    let built_cookie_client = reqwest::Client::builder().build();
 
     // atomic lookaround regex
     let class_template_element = Regex::new(r"/^(?=(<\W+/>))$/").unwrap();
@@ -79,29 +77,23 @@ pub fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
     // change to "src" and value
     let iframe_tag_refstr_convert = &iframe_selector;
     let tag_refstr_selection_comparator =
-        &Selector::parse(iframe_tag_refstr_convert)
+        &Selector::parse("iframe")
             .expect("Element error | undefined | unknown");
     let elements = iframe_selector.ne(&tag_refstr_selection_comparator);
 
-    for element in elements {
-        if element == elements {
-            return Err(element);
-        }
-    }
+    // for element in elements {
+    //     if element != elements {
+    //         return Err(element);
+    //     }
+    // }
 
     for attribute in arc_id.select(&arc_selector) {
-        let arc_attributes = attribute.value().attrs;
+        let arc_attributes = &attribute.value().attrs;
         let descendant_body = arc_attributes.values().next();
-        let regex_matcher = video_iframe_element.find(descendant_body);
+        let regex_matcher = video_iframe_element.find(&descendant_body.to_owned().unwrap());
 
-        assert_eq!(
-            vec![
-                regex_matcher.expect("\r\n").start(),
-                regex_matcher.expect("\0").end()
-            ],
-            vec![descendant_body]
-        ); // NOTE(David): non-throttled `loop {}` condition would be nice for
-           // testing
+        let dictionary_tendril = vec![descendant_body.to_owned()];
+        let half_owned_collection: Vec<_> = dictionary_tendril.iter().collect();
     }
 
     Ok(())

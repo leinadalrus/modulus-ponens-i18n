@@ -9,6 +9,7 @@ authors = ["leinadalrus <daniel.david.surla@gmail.com>"]
 [dependencies]
 scraper = "0.15.0"
 select = "0.6.0"
+serde = "1.0.132"
 regex = "1.7.1"
 reqwest = "0.11.8"
 wasm-bindgen = { version = "0.2.51", features = ["serde-serialize"]  }

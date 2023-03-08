@@ -1,5 +1,3 @@
-#![feature(decl_macro)]
-#[macro_use] extern crate rocket;
 use rocket::{
     fairing::{self, AdHoc},
     futures,
@@ -9,24 +7,26 @@ use rocket::{
 };
 use rocket_db_pools::{sqlx, Connection, Database};
 extern crate sqlx as external_sqlx;
-use external_sqlx::postgres::PgPoolOptions;
+use external_sqlx::{postgres::PgPoolOptions, sqlx_macros};
 use std::result::Result;
 
 #[derive(Database)]
 #[database("sqlx")]
 struct PgDatabase(sqlx::PgPool);
 
-#[derive(sqlx::FromRow)]
+#[derive(external_sqlx::FromRow)]
 struct User {
     id: i64,
     email: String,
     username: String,
 }
 
-#[derive(sqlx::FromRow)]
-struct Caption;
+#[derive(external_sqlx::FromRow)]
+struct Caption {
+    captions: Vec<String>,
+}
 
-#[derive(sqlx::FromRow)]
+#[derive(external_sqlx::FromRow)]
 struct Video {
     id: i64,
     user: User,
@@ -109,10 +109,10 @@ async fn pg_pool_destroy(
 
 async fn pg_migrations_run(rocket: Rocket<Build>) -> fairing::Result {
     match Database::fetch(&rocket) {
-        Some(db) => match external_sqlx::migrate!("db/sqlx/migrations") {
+        Some(db) => match sqlx_macros::migrate!("db/sqlx/migrations") {
             Ok(_) => Ok(rocket),
             Err(e) => {
-                error!("Failed to initialize SQLx database: {}", e);
+                rocket::error!("Failed to initialize SQLx database: {}", e);
                 Err(rocket)
             }
         },

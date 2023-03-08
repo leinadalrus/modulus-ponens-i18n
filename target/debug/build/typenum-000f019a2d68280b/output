@@ -1,0 +1,3 @@
+cargo:rerun-if-changed=build/main.rs
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=f:\Sources\Repos\modulus-ponens-i18n\target\debug\build\typenum-000f019a2d68280b\out\consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=f:\Sources\Repos\modulus-ponens-i18n\target\debug\build\typenum-000f019a2d68280b\out\op.rs
