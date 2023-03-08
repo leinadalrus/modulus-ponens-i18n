@@ -3,7 +3,7 @@ pub mod data;
 
 use std::rc::Rc;
 
-use bin::websys_worker_handler::{HandleWorkerFtl, HandleWorkerFtlInput, HandleWorkerFtlOutput};
+use bin::websys_worker_handler::{FtlWorkerHandler, FtlWorkerHandlerInput, FtlWorkerHandlerOutput};
 use web_sys::HtmlInputElement;
 use yew::prelude::*;
 use yew_agent::{Bridge, Bridged};
@@ -11,14 +11,14 @@ use yew_agent::{Bridge, Bridged};
 pub struct App {
     input: String,
     input_reference: NodeRef,
-    worker: Box<dyn Bridge<HandleWorkerFtl>>,
+    worker: Box<dyn Bridge<FtlWorkerHandler>>,
     output: String,
 }
 
 pub enum HandlerMessage {
     WorkerAction,
     ActiveWorker,
-    WorkerMessage(HandleWorkerFtlOutput),
+    WorkerMessage(FtlWorkerHandlerOutput),
 }
 
 impl Component for App {
@@ -30,7 +30,7 @@ impl Component for App {
             let link = context.link().clone();
             move |e| link.send_message(HandlerMessage::WorkerMessage(e))
         };
-        let worker = HandleWorkerFtl::bridge(Rc::new(callback));
+        let worker = FtlWorkerHandler::bridge(Rc::new(callback));
 
         return Self {
             input: String::from(""), // TODO(Daniel): code ...
@@ -45,7 +45,7 @@ impl Component for App {
             HandlerMessage::WorkerAction => {}
             HandlerMessage::ActiveWorker => {
                 if let Some(input) = self.input_reference.cast::<HtmlInputElement>() {
-                    self.worker.send(HandleWorkerFtlInput {
+                    self.worker.send(FtlWorkerHandlerInput {
                         input: input.value() as String,
                     });
                 }

@@ -1,6 +1,6 @@
 #![feature(decl_macro)]
 #[macro_use] extern crate rocket;
-use bin::websys_worker_handler::HandleWorkerFtl;
+use bin::websys_worker_handler::FtlWorkerHandler;
 use modulus_ponens_i18n::{App, bin};
 use rocket::{
     fs::FileServer,
@@ -40,7 +40,7 @@ fn localize() -> &'static str { "/^(localize)?[\\w]{8,}$/" }
 
 #[rocket::main]
 async fn main() -> Result<(), rocket::Error> {
-    HandleWorkerFtl::register();
+    FtlWorkerHandler::register();
     yew::Renderer::<App>::new().render();
 
     rocket::build()
