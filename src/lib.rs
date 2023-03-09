@@ -57,26 +57,4 @@ impl Component for App {
 
         return false;
     }
-
-    fn view(&self, ctx: &Context<Self>) -> Html {
-        return html! {
-            <>
-                <div>
-                    <input ref={self.input_reference.clone()} type="string" max="254"/>
-                    <p>
-                        <i>
-                            {"Node Input Reference: Outputs \n\t"}
-                        </i>
-                    </p>
-                    <table>
-                        <th>{"Preprocess"}</th>
-                        <tr>
-                            <td>{&self.output}</td>
-                        </tr>
-                    </table>
-                </div>
-                <button onclick={ctx.link().callback(|_| HandlerMessage::WorkerAction)}>{ "S U B M I T" }</button>
-            </>
-        };
-    }
 }
