@@ -9,8 +9,8 @@ authors = ["leinadalrus <daniel.david.surla@gmail.com>"]
 members = ["modulus", "ponens"]
 
 [[bin]]
-name = "modulus-ponens"
-path = "modulus-ponens/src/main.rs"
+name = "modulus"
+path = "modulus/src/main.rs"
 
 [[bin]]
 name = "arc_collection_processor"
