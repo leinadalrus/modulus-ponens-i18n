@@ -6,7 +6,7 @@ authors = ["leinadalrus <daniel.david.surla@gmail.com>"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [workspace]
-members = ["modulus-ponens"]
+members = ["modulus", "ponens"]
 
 [[bin]]
 name = "modulus-ponens"
@@ -30,17 +30,7 @@ name = "modulus-ponens-i18n"
 path = "src/main.rs"
 
 [dependencies]
-bytes = "1.0"
-encoding_rs = "0.8.31"
-fluent = "0.16.0"
-fluent-bundle = "0.15.2"
-fluent-fallback = "0.7.0"
-fluent-resmgr = "0.0.6"
-fluent-syntax = "0.11.0"
-futures = { version = "0.3", features = ["std"], default-features = false }
 js-sys = "0.3"
-linfa = "0.6.1"
-lindera = "0.23.0"
 log = "0.4"
 regex = "1.7.1"
 rocket = { version = "0.5.0-rc.2", features = ["json"] }
@@ -50,12 +40,10 @@ serde = { version = "1.0.132", features = ["derive"] }
 # Tokio: tokio + native-tls (OS derived TLS) for security
 sqlx = { version = "0.6", features = [ "runtime-tokio-native-tls" , "postgres" ] }
 tokio = { version = "1", features = ["full"] }
-unic-langid = "0.9.1"
 uuid = { version = "1.0.0", features = ["serde"] }
 wasm-bindgen = { version = "0.2.51", features = ["serde-serialize"]  }
 wasm-bindgen-futures = "0.4.1"
 web-sys = { version = "0.3", features = [ "HtmlInputElement" ] }
-whatlang = "0.16.2"
 yew = { version = "0.20.0", features = ["csr"] }
 yew-agent = "0.2.0"
 

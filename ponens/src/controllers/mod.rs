@@ -1,0 +1,1 @@
+pub mod ftl_ipadic_controller;
