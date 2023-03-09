@@ -1,7 +1,0 @@
-f:\Sources\Repos\modulus-ponens-i18n\target\debug\deps\phf_shared-69b8a9272b1c8a1f.rmeta: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\phf_shared-0.10.0\src/lib.rs
-
-f:\Sources\Repos\modulus-ponens-i18n\target\debug\deps\libphf_shared-69b8a9272b1c8a1f.rlib: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\phf_shared-0.10.0\src/lib.rs
-
-f:\Sources\Repos\modulus-ponens-i18n\target\debug\deps\phf_shared-69b8a9272b1c8a1f.d: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\phf_shared-0.10.0\src/lib.rs
-
-C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\phf_shared-0.10.0\src/lib.rs:

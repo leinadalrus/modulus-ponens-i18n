@@ -57,4 +57,8 @@ impl Component for App {
 
         return false;
     }
+
+    fn view(&self, ctx: &Context<Self>) -> Html {
+        todo!()
+    }
 }
