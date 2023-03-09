@@ -15,19 +15,19 @@ use std::result::Result;
 struct PgDatabase(sqlx::PgPool);
 
 #[derive(external_sqlx::FromRow)]
-struct User {
+pub struct User {
     id: i64,
     email: String,
     username: String,
 }
 
 #[derive(external_sqlx::FromRow)]
-struct Caption {
+pub struct Caption {
     captions: Vec<String>,
 }
 
 #[derive(external_sqlx::FromRow)]
-struct Video {
+pub struct Video {
     id: i64,
     user: User,
     title: String,

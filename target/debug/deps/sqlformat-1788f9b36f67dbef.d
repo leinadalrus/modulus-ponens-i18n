@@ -1,0 +1,12 @@
+f:\Sources\Repos\modulus-ponens-i18n\target\debug\deps\sqlformat-1788f9b36f67dbef.rmeta: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\formatter.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\indentation.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\inline_block.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\params.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\tokenizer.rs
+
+f:\Sources\Repos\modulus-ponens-i18n\target\debug\deps\libsqlformat-1788f9b36f67dbef.rlib: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\formatter.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\indentation.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\inline_block.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\params.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\tokenizer.rs
+
+f:\Sources\Repos\modulus-ponens-i18n\target\debug\deps\sqlformat-1788f9b36f67dbef.d: C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\lib.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\formatter.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\indentation.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\inline_block.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\params.rs C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\tokenizer.rs
+
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\lib.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\formatter.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\indentation.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\inline_block.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\params.rs:
+C:\Users\danie\.cargo\registry\src\github.com-1ecc6299db9ec823\sqlformat-0.1.8\src\tokenizer.rs:
