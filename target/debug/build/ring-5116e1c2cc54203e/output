@@ -1,3 +1,3 @@
 cargo:rustc-link-lib=static=ring-core
 cargo:rustc-link-lib=static=ring-test
-cargo:rustc-link-search=native=f:\Sources\Repos\modulus-ponens-i18n\target\debug\build\ring-5116e1c2cc54203e\out
+cargo:rustc-link-search=native=F:\Sources\Repos\modulus-ponens-i18n\target\debug\build\ring-5116e1c2cc54203e\out

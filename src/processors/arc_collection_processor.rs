@@ -1,9 +1,3 @@
-use neon::{
-    context::Context,
-    prelude::{FunctionContext, ModuleContext},
-    result::{JsResult, NeonResult},
-    types::JsString,
-};
 use serde::{Deserialize, Serialize};
 use yew_agent::{HandlerId, Public, WorkerLink};
 
@@ -33,18 +27,21 @@ impl yew_agent::Worker for ArcWorkerHandler {
         let shared_immutable = ArcWorkerHandlerInput {
             input: Self::name_of_resource().to_owned(),
         };
-        if let state = Self::resource_path_is_relative() {
-            match state {
-                true => println!("resource_path_is_relative == true ? !false : 1"),
-                false => panic!("resource_path_is_relative != true ? false : 0"),
-                _ => (),
-            }
 
-            match shared_immutable {
-                ArcWorkerHandlerInput => println!("name_of_resource().to_owned() == true ? !false : 1"),
-                _ => (),
-            } // regex match state => shared_immutable.input => Result<()>
+        let state = Self::resource_path_is_relative();
+
+        match state {
+            true => println!("resource_path_is_relative == true ? !false : 1"),
+            false => panic!("resource_path_is_relative != true ? false : 0"),
+            _ => (),
         }
+
+        match shared_immutable {
+            ArcWorkerHandlerInput => {
+                println!("name_of_resource().to_owned() == true ? !false : 1")
+            }
+            _ => (),
+        } // regex match state => shared_immutable.input => Result<()>
     }
 
     fn connected(&mut self, _id: HandlerId) {}
