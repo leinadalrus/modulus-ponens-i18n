@@ -23,7 +23,7 @@ impl yew_agent::Worker for ArcWorkerHandler {
 
     fn create(link: WorkerLink<Self>) -> Self { return Self { link }; }
 
-    fn update(&mut self, message: Self::Message) {
+    fn update(&mut self, _message: Self::Message) {
         let shared_immutable = ArcWorkerHandlerInput {
             input: Self::name_of_resource().to_owned(),
         };
@@ -37,7 +37,7 @@ impl yew_agent::Worker for ArcWorkerHandler {
         }
 
         match shared_immutable {
-            ArcWorkerHandlerInput => {
+            ArcWorkerHandlerInput { input: _message } => {
                 println!("name_of_resource().to_owned() == true ? !false : 1")
             }
             _ => (),
